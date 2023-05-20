@@ -41,6 +41,12 @@ button:hover {
   border-color: #646cff;
 }
 
+.error_input, .error_input:focus, .error_input:focus-visible {
+  border-color: #ff6464;
+  outline: #ff6464;
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

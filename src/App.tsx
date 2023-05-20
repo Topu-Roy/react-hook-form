@@ -1,7 +1,8 @@
+import "./App.css";
 import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import "./App.css";
+import { clsx } from "clsx";
 
 type FormData = {
   firstName: string;
@@ -44,17 +45,29 @@ function App() {
       <form onSubmit={handleSubmit(formHandler)}>
         <h1>Zod & React Hook Form</h1>
         <label>First Name:</label>
-        <input type="text" {...register("firstName")} />
+        <input
+          className={clsx(errors.firstName ? " error_input" : "")}
+          type="text"
+          {...register("firstName")}
+        />
         {errors.firstName && (
           <span className="error_message">{errors.firstName.message}</span>
         )}
         <label>Last Name:</label>
-        <input type="text" {...register("lastName")} />
+        <input
+          className={clsx(errors.lastName ? " error_input" : "")}
+          type="text"
+          {...register("lastName")}
+        />
         {errors.lastName && (
           <span className="error_message">{errors.lastName.message}</span>
         )}
         <label>Email:</label>
-        <input type="email" {...register("email")} />
+        <input
+          className={clsx(errors.email ? " error_input" : "")}
+          type="email"
+          {...register("email")}
+        />
         {errors.email && (
           <span className="error_message">{errors.email.message}</span>
         )}
@@ -62,14 +75,26 @@ function App() {
         {errors.age && (
           <span className="error_message">{errors.age.message}</span>
         )}
-        <input type="number" {...register("age", { valueAsNumber: true })} />
+        <input
+          className={clsx(errors.age ? " error_input" : "")}
+          type="number"
+          {...register("age", { valueAsNumber: true })}
+        />
         <label>Password:</label>
-        <input type="text" {...register("password")} />
+        <input
+          className={clsx(errors.password ? " error_input" : "")}
+          type="text"
+          {...register("password")}
+        />
         {errors.password && (
           <span className="error_message">{errors.password.message}</span>
         )}
         <label>Confirm Password:</label>
-        <input type="text" {...register("confirmPassword")} />
+        <input
+          className={clsx(errors.confirmPassword ? " error_input" : "")}
+          type="text"
+          {...register("confirmPassword")}
+        />
         {errors.confirmPassword && (
           <span className="error_message">
             {errors.confirmPassword.message}
