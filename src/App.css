@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error_message {
+  color: crimson;
+  font-size: small;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+
+}
